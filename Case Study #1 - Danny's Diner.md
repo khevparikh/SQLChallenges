@@ -3,9 +3,9 @@
 
 Danny wants to leverage customer data to gain insights into their visiting patterns, spending habits, and favorite menu items. This understanding will enable him to enhance customer experience and possibly expand his loyalty program. Danny has provided three main datasets: sales, menu, and members. These datasets will be used to analyze customer behavior and preferences, ultimately informing decisions regarding customer engagement and loyalty initiatives.
 
-The entity relationship diagram below provides insights 
+The entity relationship diagram below provides insights into the information contained within each table, including their columns, data types, and the relationships between them. It illustrates the tables that are linked and identifies the common keys used for these connections.
 
-
+<img src=entity_diagram.jpg width="600" height="500">
 
 ---
 
@@ -281,4 +281,5 @@ ORDER BY customer_id;
 | C           | 360          |
 
 ---
- 
+
+[View on DB Fiddle](https://www.db-fiddle.com/f/46HdTg76sGXC8Bx7ytiBpm/0)
