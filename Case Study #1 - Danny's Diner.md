@@ -281,5 +281,3 @@ ORDER BY customer_id;
 | C           | 360          |
 
 ---
-
-[View on DB Fiddle](https://www.db-fiddle.com/f/46HdTg76sGXC8Bx7ytiBpm/0)
