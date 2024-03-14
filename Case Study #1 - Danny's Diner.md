@@ -1,7 +1,7 @@
 
 ### Problem Statement: 
 
-Danny wants to leverage customer data to gain insights into their visiting patterns, spending habits, and favorite menu items. This understanding will enable him to enhance customer experience and possibly expand his loyalty program. Danny has provided three main datasets: sales, menu, and members. These datasets will be used to analyze customer behavior and preferences, ultimately informing decisions regarding customer engagement and loyalty initiatives.
+Danny wants to leverage customer data to gain insights into their visiting patterns, spending habits, and favorite menu items. This understanding will enable him to enhance customer experience and possibly expand his loyalty program. Danny has provided  <b> three main datasets: sales, menu, and members.</b> These datasets will be used to analyze customer behavior and preferences, ultimately informing decisions regarding customer engagement and loyalty initiatives.
 
 The entity relationship diagram below provides insights into the information contained within each table, including their columns, data types, and the relationships between them. It illustrates the tables that are linked and identifies the common keys used for these connections.
 
