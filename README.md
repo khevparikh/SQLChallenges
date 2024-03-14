@@ -7,5 +7,6 @@ The solutions are provided above, a markdown file for each respective case study
 #### Case Studies: 
 
 1) [Danny's Diner](https://8weeksqlchallenge.com/case-study-1/)
+2) [Pizza Runner](https://8weeksqlchallenge.com/case-study-2/)
 
 
