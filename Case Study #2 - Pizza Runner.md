@@ -19,18 +19,68 @@ traveled by the runner. There are known data issues in this table.
 The entity relationship diagram below provides insights into the information contained within each table, including their columns, data types, and the relationships between them. 
 It illustrates the tables that are linked and identifies the common keys used for these connections.
 
-<img src=entity_diagram.jpg width="600" height="500">
+<img src=repo_images/entity_diagram_2.png width="1000" height="500">
 
 ---
 
-**Query #1: What is the total amount each customer spent at the restaurant?** 
-
+**Query #1: How many pizzas were ordered?**
 ```sql
-SELECT s.customer_id
-       , SUM(m.price) AS total_spent
-FROM dannys_diner.sales s
-LEFT JOIN dannys_diner.menu m
-       ON s.product_id = m.product_id
-GROUP BY s.customer_id
-ORDER BY s.customer_id;
+SELECT COUNT(pizza_id) as num_pizzas_ordered
+FROM pizza_runner.customer_orders;
 ```
+
+| num_pizzas_ordered |
+| ------------------ |
+| 14                 |
+
+---
+
+**Query #2: How many unique customer orders were made?**
+```sql
+SELECT COUNT(DISTINCT order_id) as num_orders_placed
+FROM pizza_runner.customer_orders;
+```
+
+| num_orders_placed |
+| ----------------- |
+| 10                |
+
+---
+
+**Query #3: How many successful orders were delivered by each runner?**
+```sql
+SELECT COUNT(order_id) as successful_orders 
+FROM pizza_runner.runner_orders
+WHERE pickup_time != 'null';
+```
+Note: Some rows contain null values, which are represented as strings rather than the built-in null function.
+
+| successful_orders |
+| ----------------- |
+| 8                 |
+
+---
+
+**Query #4: How many of each type of pizza was delivered?**
+```sql
+SELECT	p.pizza_name
+       , COUNT(c.pizza_id) AS num_delivered 
+FROM pizza_runner.runner_orders r
+LEFT JOIN pizza_runner.customer_orders c
+       ON r.order_id = c.order_id
+LEFT JOIN pizza_runner.pizza_names p
+       ON c.pizza_id = p.pizza_id 
+WHERE
+       pickup_time != 'null'
+GROUP BY
+       p.pizza_name;
+```
+
+| pizza_name | num_delivered    |
+| ---------- | ---------------- |
+| Meatlovers | 9                |
+| Vegetarian | 3                |
+
+---
+
+[View on DB Fiddle](https://www.db-fiddle.com/f/mdd7LYzxFXSFYHXAbgzQiy/0)
