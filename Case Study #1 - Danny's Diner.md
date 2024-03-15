@@ -5,7 +5,7 @@ Danny wants to leverage customer data to gain insights into their visiting patte
 
 The entity relationship diagram below provides insights into the information contained within each table, including their columns, data types, and the relationships between them. It illustrates the tables that are linked and identifies the common keys used for these connections.
 
-<img src=entity_diagram.jpg width="600" height="500">
+<img src=/repo_images/entity_diagram_1.jpg width="600" height="500">
 
 ---
 
