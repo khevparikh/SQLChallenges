@@ -25,7 +25,7 @@ It illustrates the tables that are linked and identifies the common keys used fo
 
 **Query #1: How many pizzas were ordered?**
 ```sql
-SELECT COUNT(pizza_id) as num_pizzas_ordered
+SELECT COUNT(pizza_id) AS num_pizzas_ordered
 FROM pizza_runner.customer_orders;
 ```
 
@@ -37,7 +37,7 @@ FROM pizza_runner.customer_orders;
 
 **Query #2: How many unique customer orders were made?**
 ```sql
-SELECT COUNT(DISTINCT order_id) as num_orders_placed
+SELECT COUNT(DISTINCT order_id) AS num_orders_placed
 FROM pizza_runner.customer_orders;
 ```
 
@@ -49,7 +49,7 @@ FROM pizza_runner.customer_orders;
 
 **Query #3: How many successful orders were delivered by each runner?**
 ```sql
-SELECT COUNT(order_id) as successful_orders 
+SELECT COUNT(order_id) AS successful_orders 
 FROM pizza_runner.runner_orders
 WHERE pickup_time != 'null';
 ```
@@ -70,10 +70,8 @@ LEFT JOIN pizza_runner.customer_orders c
        ON r.order_id = c.order_id
 LEFT JOIN pizza_runner.pizza_names p
        ON c.pizza_id = p.pizza_id 
-WHERE
-       pickup_time != 'null'
-GROUP BY
-       p.pizza_name;
+WHERE pickup_time != 'null'
+GROUP BY p.pizza_name;
 ```
 
 | pizza_name | num_delivered    |
